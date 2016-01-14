@@ -23,6 +23,25 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'clearance'
+
+gem 'omniauth-facebook'
+
+gem 'figaro'
+
+gem 'bootstrap-sass'
+
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
+gem 'mini_magick'
+
+gem 'pg'
+
+gem 'fog'
+
+# gem 'carrierwave'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -35,6 +54,24 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-puma'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem 'shoulda-callback-matchers'
+
+      # For developer's code improvements
+    gem 'colored'
+    gem 'traceroute'
+    gem 'rails_best_practices'
+    gem 'rubocop'
+    gem 'rubycritic'
+    gem 'brakeman'
+    gem 'bullet'
+    gem 'rack-mini-profiler'
 end
 
 group :development do

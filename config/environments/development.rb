@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -36,6 +37,10 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+    config.after_initialize do
+        Bullet.enable = true
+        Bullet.alert = true
+    end
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

@@ -1,0 +1,8 @@
+<h1>You're in the users#new. This file is located in 'app/views/users/new.html.erb'</h1>
+
+<%= form_for(@user) do |u| %>
+ <%= u.text_field :first_name %>
+ <%= u.text_area :email %>
+  <%= u.text_area :password %>
+<%= link_to 'Sign Up', home_path %>
+<% end %>
