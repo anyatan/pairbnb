@@ -39,6 +39,13 @@ gem 'pg'
 
 gem 'fog'
 
+gem 'searchkick'
+
+gem 'braintree'
+
+gem 'gon'
+
+gem 'jquery-ui-rails'
 # gem 'carrierwave'
 
 
@@ -71,7 +78,7 @@ group :development, :test do
     gem 'rubycritic'
     gem 'brakeman'
     gem 'bullet'
-    gem 'rack-mini-profiler'
+    # gem 'rack-mini-profiler'
 end
 
 group :development do

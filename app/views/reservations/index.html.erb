@@ -1,0 +1,20 @@
+<h1>Please store your reservations detail below</h1>
+
+<table>
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%= reservation.start_date %></td>
+        <td><%= reservation.end_date %></td>
+        <td><%= reservation.pax %></td>
+        <td><%= reservation.special_requirements %></td>
+        <td><%= link_to 'Show', listing_reservation_path(@listing, reservation) %></td>
+        <td><%= link_to 'Edit', edit_listing_reservation_path(@listing, reservation) %></td>
+        <td><%= link_to 'Destroy', listing_reservation_path(@listing,reservation), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'New Reservation', new_listing_reservation_path %>

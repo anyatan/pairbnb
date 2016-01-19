@@ -1,6 +1,7 @@
 class FacebookUser < ActiveRecord::Base
 include Clearance::User
 has_many :listings
+has_many :reservations
   def self.from_omniauth(auth)
     # byebug
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|

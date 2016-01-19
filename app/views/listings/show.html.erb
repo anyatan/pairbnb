@@ -20,8 +20,9 @@
   <%= @listing.location %>
 </p>
 
+<% @listing.avatars.each do |x| %>
+<img src="<%=x.thumb.url%>">
+<%end%>
+
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
-<% @list.avatars.each do |x| %>
-<img src="<%=x.url%>">
-<%end%>

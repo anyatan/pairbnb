@@ -3,14 +3,32 @@ class ListingsController < ApplicationController
 
   # GET /listings
   # GET /listings.json
+  def search 
+    @listings = Listing.search params[:search]
+  end
+
+  # def date_validation
+  #   if self[:end_date] < self[:start_date]
+  #     errors[:end_date] << "Error message"
+  #     return false
+  #   else
+  #     return true
+  #   end
+  # end
+  def abc
+    @my_listings = current_user.listings
+  end
+
   def index
     @listings = Listing.all
+    @reservation = Reservation.find_by(params[:id])
+    @my_listings = current_user.listings
   end
 
   # GET /listings/1
   # GET /listings/1.json
   def show
-    @list = Listing.find(current_user)
+    # @list = Listing.find(current_user)
   end
 
   # GET /listings/new
@@ -26,6 +44,7 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
+    @listing.user_id = current_user.id
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
