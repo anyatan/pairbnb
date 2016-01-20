@@ -46,6 +46,10 @@ gem 'braintree'
 gem 'gon'
 
 gem 'jquery-ui-rails'
+
+gem 'rails_12factor'
+
+gem 'unicorn'
 # gem 'carrierwave'
 
 
