@@ -5,6 +5,20 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <div id="user-widget" class="nav">
+  <% if current_user %>
+    Welcome <strong><%= current_user.email %></strong>!
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <% else %>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+  <% end %>
+</div>
+<%= include_gon %>
+<%= stylesheet_link_tag "application" %>
+<%= javascript_include_tag "vendor/modernizr" %>
+<%= csrf_meta_tags %>
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
 </head>
 <body>
 
@@ -12,3 +26,22 @@
 
 </body>
 </html>
+
+    <% if signed_in? %>
+      Signed in as: <%= current_user.email %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign in', sign_in_path %>
+    <% end %>
+
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+
+    <form method="GET" action="/search"> 
+      <input name="search" placeholder="search">
+      <input type="submit" value="search">
+    </form>
+ 

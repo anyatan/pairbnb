@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+<% if @listing == @reservation.listing_id %>
+   <td><%= @reservation.start_date %></td>
+        <td><%= @reservation.end_date %></td>
+        <td><%= @reservation.pax %></td>
+        <td><%= @reservation.special_requirements %></td>
+<%else p "There is no reservation for this listing"%>
+<%end%>
+</div>
+<%= link_to 'Edit', edit_listing_reservation_path(@listing, @reservation) %> |
+<%= link_to 'Back', listing_reservations_path(@listing, @reservation) %>
+<%=link_to "Checkout", new_transaction_path, class: "button"%>
