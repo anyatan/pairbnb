@@ -58,9 +58,4 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  # elastic search 
-  # elasticsearch_url = ENV['SEARCHBOX_URL'] || ENV['SEARCHLY_URL'] ||
-  #   JSON.parse(ENV['VCAP_SERVICES']['searchly'][0]['credentials']['uri']) || 'http://site:xyz-searchly.com'
-
-  # Elasticsearch::Model.client = Elasticsearch::Client.new host: elasticsearch_url
 end
