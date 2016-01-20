@@ -48,7 +48,7 @@ gem 'jquery-ui-rails'
 
 gem 'rails_12factor'
 
-gem 'unicorn'
+gem 'puma'
 # gem 'carrierwave'
 
 
